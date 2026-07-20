@@ -1,0 +1,211 @@
+.cart-container {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.cart-container > p {
+  padding: 26px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+}
+
+.cart-container > p a {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.cart-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.8fr) minmax(320px, 0.75fr);
+  gap: 26px;
+  align-items: start;
+  margin-top: 8px;
+}
+
+.cart-items {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cart-item {
+  display: grid;
+  grid-template-columns: 118px minmax(0, 1fr);
+  gap: 20px;
+  align-items: center;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.22);
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.cart-item:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 122, 26, 0.28);
+  background: rgba(21, 29, 41, 0.94);
+}
+
+.cart-item-image {
+  width: 118px;
+  height: 118px;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+  background: var(--surface-muted);
+}
+
+.cart-item-details {
+  min-width: 0;
+}
+
+.cart-item-details h4 {
+  margin: 0 0 8px;
+  font-size: 1.08rem;
+}
+
+.cart-item-details p {
+  margin-bottom: 12px;
+  color: var(--accent);
+  font-weight: 800;
+}
+
+.qty-controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px;
+  margin: 0 12px 0 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: rgba(8, 12, 18, 0.42);
+}
+
+.qty-controls button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  font-weight: 800;
+  transition: background 160ms ease, color 160ms ease;
+}
+
+.qty-controls button:hover {
+  background: var(--accent-soft);
+  color: #ffd5ba;
+}
+
+.qty-controls span {
+  min-width: 28px;
+  color: var(--text);
+  font-weight: 800;
+  text-align: center;
+}
+
+.btn-remove {
+  min-height: 38px;
+  padding: 8px 13px;
+  border: 1px solid rgba(255, 93, 93, 0.24);
+  border-radius: var(--radius-sm);
+  background: rgba(255, 93, 93, 0.08);
+  color: #ff9d9d;
+  cursor: pointer;
+  font-weight: 700;
+  transition: background 160ms ease, border-color 160ms ease, color 160ms ease;
+}
+
+.btn-remove:hover {
+  border-color: rgba(255, 93, 93, 0.52);
+  background: rgba(255, 93, 93, 0.16);
+  color: #ffdada;
+}
+
+.cart-summary {
+  position: sticky;
+  top: 92px;
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: linear-gradient(180deg, rgba(255, 122, 26, 0.08), transparent 46%), var(--surface);
+  box-shadow: var(--shadow-soft);
+}
+
+.cart-summary h3 {
+  margin-bottom: 22px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--border);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+.btn-checkout {
+  width: 100%;
+  padding: 15px 18px;
+}
+
+.checkout-content {
+  width: min(100%, 680px);
+  margin: 0 auto;
+  padding: clamp(22px, 5vw, 36px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  box-shadow: var(--shadow-card);
+}
+
+.shipping-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.shipping-form input {
+  width: 100%;
+  padding: 0 15px;
+}
+
+.checkout-summary {
+  margin-top: 24px;
+  padding-top: 22px;
+  border-top: 1px solid var(--border);
+  text-align: right;
+}
+
+.checkout-summary h4 {
+  margin-bottom: 18px;
+  color: var(--accent);
+  font-size: 1.45rem;
+}
+
+@media (max-width: 840px) {
+  .cart-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .cart-summary {
+    position: static;
+  }
+}
+
+@media (max-width: 560px) {
+  .cart-item {
+    grid-template-columns: 88px minmax(0, 1fr);
+    gap: 14px;
+    padding: 12px;
+  }
+
+  .cart-item-image {
+    width: 88px;
+    height: 88px;
+  }
+
+  .qty-controls {
+    margin-bottom: 10px;
+  }
+}
