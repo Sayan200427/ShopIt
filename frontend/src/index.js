@@ -5,6 +5,7 @@ import { AuthProvider } from './context/AuthContext';
 import './styles/global.css';
 import { Provider } from 'react-redux';
 import store from './redux/store';
+import './setupApi';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
